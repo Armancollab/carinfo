@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'carinfo_app/styles.css' %}">
+    <title>Car Information Display</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Information Display</h1>
+        <div class="input-section">
+            <form action="{% url 'get_car_info' %}" method="get">
+                <label for="modelInput">Car Model:</label>
+                <div class="search-bar">
+                    <input type="text" id="modelInput" name="model" placeholder="Search car model..."> 
+                </div>
+                <label for="resultLimit">Number of Results:</label>
+                <input type="number" id="resultLimit" name="resultLimit" value="5" min="1" max="50">
+                <button type="submit">Get Car Details</button>
+            </form>
+            <p>Example: Camry, Accord, Civic, Mustang, Corolla</p>
+        </div>
+        <div id="carInfoSection"></div>
+    </div>    
+    <script src="https://kit.fontawesome.com/2a89dcfd9c.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

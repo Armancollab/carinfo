@@ -1,0 +1,23 @@
+{% extends "carinfo_app/base.html" %}
+
+{% block content %}
+  <h3>{{ default_model|title }}</h3>
+  <div class="car-details">
+    {% for car in car_data|dictsort:"model" %}
+      <div class="car-card">
+        <div class="car-header">{{ car.make|title }} {{ car.model|title }}</div>
+        <div class="car-body">
+          <p>{{ forloop.counter }}</p>
+          <h5 class="car-title">Car : {{ car.make|title }} {{ car.model|title }}</h5>
+          <ul class="car-details-list">
+            <li>Year: {{ car.year }}</li>
+            <li>Cylinders: {{ car.cylinders }}</li>
+            <li>Displacement: {{ car.displacement }}</li>
+            <li>Transmission: {{ car.transmission }}</li>
+            <li>Fuel Type: {{ car.fuel_type }}</li>
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

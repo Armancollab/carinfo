@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'carinfo_app/styles.css' %}">
+    <title>Car Information Display</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Car Information Display</h1>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
